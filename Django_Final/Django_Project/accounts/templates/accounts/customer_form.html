@@ -1,0 +1,53 @@
+{%  extends 'accounts/main.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="card card-body">
+
+			<form action="" method="POST">
+				<!--{% csrf_token %}
+				{{form_customer}}-->
+				{% csrf_token %}
+				<!--{% for field in form_customer %}
+
+					{{field}}
+					<hr>
+				{% endfor %}-->
+
+			<table class="table table-sm">
+				<tr>
+					<th>Customer ID</th>
+					<th>Customer Name</th>
+					<th>Phone Number</th>
+					<th>Email Address</th>
+					<th>Address</th>
+					<th>Contact Person</th>
+					<th>Status</th>
+				</tr>
+
+				
+				<tr>
+					<td>{{form_customer.customer_id}}</td>
+					<td>{{form_customer.name}}</td>
+					<td>{{form_customer.phone}}</td>
+					<td>{{form_customer.email}}</td>
+					<td>{{form_customer.address}}</td>
+					<td>{{form_customer.contact_person}}</td>
+					<td>{{form_customer.status}}</td>			
+					</tr>
+				
+
+			</table>				
+
+				<input type="submit" name="Submit">
+			</form>
+
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}
